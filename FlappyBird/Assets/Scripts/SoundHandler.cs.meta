@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c5bcebd70783d6f4ca4a13fbc5f493bb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - flyClip0: {fileID: 8300000, guid: 93752817101e5f34cba2a0ba674e4816, type: 3}
+  - flyClip1: {fileID: 8300000, guid: ef9f33f42280c5243b0b554e8ec3cf7b, type: 3}
+  - flyClip2: {fileID: 8300000, guid: 48a8479611ac0b44e8688341089bb427, type: 3}
+  - flyClip3: {fileID: 8300000, guid: 374cb1ba0d4a5e044997d1470b7e94b7, type: 3}
+  - flyClip4: {fileID: 8300000, guid: d8acf7c037cd57c41a225572c3029022, type: 3}
+  - flyClip5: {fileID: 8300000, guid: 9dda0ef1c2871394286d1da047c137d6, type: 3}
+  - flyClip6: {fileID: 8300000, guid: 8258cb4cf8351264fa5ae3d02efac28a, type: 3}
+  - flyClip7: {fileID: 8300000, guid: 0d68102d97042d64b9e4c95373c99e99, type: 3}
+  - deathClip: {fileID: 8300000, guid: 73b9b4db000548944b6bcfe13a79d427, type: 3}
+  - startClip: {fileID: 8300000, guid: dbdc98f41b90e814cb8254185bb3c970, type: 3}
+  - audioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
