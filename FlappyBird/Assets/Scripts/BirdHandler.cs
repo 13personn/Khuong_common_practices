@@ -9,24 +9,27 @@ using UnityEngine.Events;
 public class BirdHandler : MonoBehaviour
 {
 
+    Boolean isEnd = false;
     public event EventHandler EndGameEvent;
-    public  event EventHandler FlySoundEvent;
-    public  event EventHandler StartSoundEvent;
+    public event EventHandler FlySoundEvent;
+    public event EventHandler StartSoundEvent;
     public event EventHandler DeathSoundEvent;
+    public event EventHandler PointEvent;
+    public event EventHandler PanelEvent;
     public float flyPower;
     // public GameObject obj;
-//     public CommonController commonController;
-//    public SoundHandler soundHandler;
+    //     public CommonController commonController;
+    //    public SoundHandler soundHandler;
 
     //
     ///start
     //
     void Start()
     {
-       flyPower =350;
-        StartSoundEvent?.Invoke(this,EventArgs.Empty);
+        flyPower = 350;
+        StartSoundEvent?.Invoke(this, EventArgs.Empty);
 
-        
+
         // audioSource = gameControllers.GetOrAddComponent<AudioSource>();  
     }
 
@@ -36,7 +39,7 @@ public class BirdHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isEnd == false)
         {
             BirdMove();
         }
@@ -49,9 +52,9 @@ public class BirdHandler : MonoBehaviour
     //
     void BirdMove()
     {
-        GetComponent<Rigidbody2D>().AddForce(new Vector2(5,flyPower));
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(0, flyPower));
 
-            FlySoundEvent?.Invoke(this,EventArgs.Empty);
+        FlySoundEvent?.Invoke(this, EventArgs.Empty);
 
     }
 
@@ -61,8 +64,10 @@ public class BirdHandler : MonoBehaviour
         if (other.gameObject.tag == "Finish")
         {
 
-                EndGameEvent?.Invoke(this,EventArgs.Empty);
-                DeathSoundEvent?.Invoke(this,EventArgs.Empty);
+            EndGameEvent?.Invoke(this, EventArgs.Empty);
+            DeathSoundEvent?.Invoke(this, EventArgs.Empty);
+            PanelEvent?.Invoke(this, EventArgs.Empty);
+            isEnd = true;
 
         }
     }
@@ -70,15 +75,17 @@ public class BirdHandler : MonoBehaviour
 
 
 
-    // void OnTriggerEnter2D(Collider2D col)
-    // {
-    //     Debug.Log("0");
-    //     if (col.gameObject.tag == "PointTrigger")
-    //     {
-    //         Debug.Log("1");
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("0");
+        if (col.tag.Equals("PointTrigger"))
+        {
+            PointEvent?.Invoke(this, EventArgs.Empty);
 
-    //     }
-    // }
+        }
+    }
+
+
 
 
 

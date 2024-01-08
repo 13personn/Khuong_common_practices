@@ -14,20 +14,24 @@ public class CommonController : MonoBehaviour
     int gamePoint = 0;
     bool isEnd = false;
     public Text textPoint;
+
     //
     //start
     //
 
     void Start()
     {
-        //  birdHandler = GetComponent<BirdHandler>();
+
         Time.timeScale = 0;
-        if(birdHandler==null)
+        if (birdHandler == null)
         {
             Debug.Log("birdhandler in commoncontrolelr = null");
         }
-         birdHandler.EndGameEvent += EndGame;
-        
+        birdHandler.EndGameEvent += EndGame;
+        birdHandler.PointEvent += GetPoint;
+
+
+
 
     }
 
@@ -52,18 +56,15 @@ public class CommonController : MonoBehaviour
         {
             Time.timeScale = 1;
 
+
         }
-        if (Input.GetMouseButtonDown(0) && isEnd == true)
-        {
-            SceneManager.LoadScene(0);
-            isEnd = false;
-        }
+
     }
 
 
 
 
-    public void GetPoint()
+    public void GetPoint(object sender, EventArgs e)
     {
         gamePoint++;
         textPoint.text = "Point:" + gamePoint.ToString();
@@ -76,5 +77,6 @@ public class CommonController : MonoBehaviour
 
         isEnd = true;
     }
-   
+
+
 }

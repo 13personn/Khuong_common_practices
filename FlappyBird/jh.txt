@@ -1,0 +1,5 @@
++add vào trello để phân chia việc ,kiểm tra tiến độ
++1 tuần họp 1 lần, trao đổi thường xuyên về khó khăn trong tuần 
++template xịn
++ doc điền function, actor, và có lẽ là thêm cả unfunctional
++từ lần sau họp nên ghi vào cả document luôn 

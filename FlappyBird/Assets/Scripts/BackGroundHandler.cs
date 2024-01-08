@@ -15,7 +15,7 @@ public class BackGroundHandler : MonoBehaviour
     {
         obj = gameObject;
         oldPosition = obj.transform.position;
-        moveSpeed = 1;
+        moveSpeed = 3;
         moveRange = 15f;
     }
 //

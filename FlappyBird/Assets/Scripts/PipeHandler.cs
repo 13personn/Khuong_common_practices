@@ -17,9 +17,9 @@ public class PipeHandler : MonoBehaviour
     //
     void Start()
     {
-        
+
         obj = gameObject;
-   
+
         oldPosition = obj.transform.position;
         originX = obj.transform.position.x;
         originY = obj.transform.position.y;
@@ -28,7 +28,7 @@ public class PipeHandler : MonoBehaviour
         minY = -1f;
         maxY = 2f;
         moveRange = 22;
-        moveSpeed = 1;
+        moveSpeed = 2;
     }
 
     //
@@ -48,8 +48,19 @@ public class PipeHandler : MonoBehaviour
 
         if (col.gameObject.tag == "resetLocation")
         {
-            Debug.Log(" pipe va chạm");
+
             obj.transform.position = new Vector3(15, UnityEngine.Random.Range(minY, maxY + 1), originZ);
+
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+
+        if (col.gameObject.tag == "resetLocation")
+        {
+            Debug.Log(" pipe exit");
+
 
         }
     }
